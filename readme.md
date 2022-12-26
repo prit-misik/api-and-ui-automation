@@ -4,7 +4,6 @@ Test automation framework using Selenium WebDriver with Cucumber,Java, TestNG an
 ====================================================================================================================================
 
 
-
 1.This project demonstrates POM framework and how it can be used 
   in Selenium to automate any application. Maven is used as test framework.
 
@@ -35,6 +34,7 @@ Test automation framework using Selenium WebDriver with Cucumber,Java, TestNG an
 
 8. Logs can be found as application.log inside the project
 
+9. The repo will be updated continuously. 
 
 
 

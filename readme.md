@@ -1,6 +1,6 @@
 
 
-Test automation framework using Selenium WebDriver with Cucumber,Java, TestNG and Maven, following Page Object Model Design Pattern
+Test automation framework using Selenium WebDriver with Cucumber,Java, TestNG and Maven, with Page Object Model Design Pattern
 ====================================================================================================================================
 
 1.This project demonstrates POM framework and how it can be used 

@@ -1,0 +1,17 @@
+UI cases:
+1. User creates a new article with given data
+   And after creation user verifies different parameters
+2. User edits and already created article
+   And then user verifies if the updated info is displayed correctly or not.
+3. User deletes an article
+   And then user verifies that article is no more visible in the UI
+4. User searches with a tag by clicking on the tag
+   Then user verifies a new tab is open with the tag name, and it contains related articles.
+5. User Updates the profile setting
+   Then user verifies the visibility of the updated information.
+
+API cases:
+1. User creates a new article and verifies the success status.
+   Also verifies different attributes of the article from the response .
+2. User marks an article as favourite and validates the status.
+3. User deletes an article and verifies the status .

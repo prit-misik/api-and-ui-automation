@@ -1,28 +1,23 @@
 package stepDefinitions;
 
-import base.DriverSetUp;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import util.TestUtils;
-
-import java.util.HashMap;
+import base.SetUp;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 
 
-public class Hooks extends DriverSetUp {
+public class Hooks extends SetUp {
 
     private static boolean flag = true;
-    HashMap<String, String> map = TestUtils.getPropFileValues();
 
-    @Before
+    @Before("@ui")
     public void setUP() throws Exception {
         if (flag) {
-            DriverSetUp.intialize();
-            driver.get(map.get("browser"));
+            SetUp.intialize();
             flag = false;
         }
     }
 
-    @After
+    @After("@ui")
     public static void tearDown() {
 
         if (driver != null) {

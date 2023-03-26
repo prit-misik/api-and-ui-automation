@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class DriverSetUp {
+public class SetUp {
 
     public static WebDriver driver;
     public static Properties prop = null;
@@ -25,9 +25,10 @@ public class DriverSetUp {
 
     public static void intialize() {
 
-        APP_LOGS = LogManager.getLogger(DriverSetUp.class);
+        APP_LOGS = LogManager.getLogger(SetUp.class);
 
         HashMap<String, String> map = TestUtils.getPropFileValues();
+
         if (map.get("browser").equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
@@ -50,13 +51,8 @@ public class DriverSetUp {
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(TestUtils.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(TestUtils.IMPLICIT_WAIT, TimeUnit.SECONDS);
-        APP_LOGS.debug("Completed inialization");
+        APP_LOGS.debug("Completed initialization");
 
-    }
-
-    public static void closeBrowser() {
-        driver.quit();
-        APP_LOGS.info("Killed browser Successfully.");
     }
 
 }

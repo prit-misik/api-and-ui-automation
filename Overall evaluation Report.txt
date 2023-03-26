@@ -1,0 +1,21 @@
+UI:
+ When user's short bio is updated , and after that if user logs out,
+ next time user is not able to login with his credentials. This looks like a serious issue,
+ as during update the user has not touched anything related to credentials, but yet it got affected.
+ I've picked up this test to automate, as it one of the important functionalities , and it could cause regressions
+ later also. There is a good chance that every user might face the same issue.
+
+ API:
+  When user marks an article as favourite, the favourite count in the response doesn't increase.
+  I picked this scenario up, as nowadays marking things as favourite on an app is quite common, and hence it
+  could give users a bad experience if it is not fixed . I want to include it in the regression suite, so that if the problem appears
+  again in the future , we can catch it easily.
+
+ Risks/suggestions:
+    1. emails are not validated if they are real or not.
+    2. An user can create any number of articles with the exact same details.
+    3. All the fields can have empty strings and yet an article can be created.
+    4. Pagination is bad. the home page>global feed shows all the available page numbers.
+       It should be shown as 10 or 7 per page.
+    6. Using APIs when any article is created, it returns 200 status, as it is a resource creation operation, a 201 would have been nicer.
+    5. API spec is confusing , especially auth information.

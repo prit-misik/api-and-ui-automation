@@ -1,6 +1,7 @@
 package util;
 
 import base.BasePage;
+import impl.EditorImpl;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -23,7 +24,6 @@ public class WebDriverUtils extends BasePage {
         }
         return title;
     }
-
 
     /**
      * checks if the provided element is present, if not returns false
@@ -129,7 +129,17 @@ public class WebDriverUtils extends BasePage {
         }
     }
 
-    /**
+  public static boolean isElementVisible(String xpath, String text) {
+    try {
+      ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(xpath, text)));
+      return true;
+    } catch (Exception e) {
+      return false;
+    }
+  }
+
+
+  /**
      * checks if the provided element is not present, if not returns false
      *
      * @param
@@ -565,21 +575,7 @@ public class WebDriverUtils extends BasePage {
 
             Thread.sleep(2000);
             el.sendKeys(Keys.BACK_SPACE);
-//            JavascriptExecutor jse = (JavascriptExecutor)driver;
-//            jse.executeScript("arguments[0].value='"+ value +"';", el);
-            System.out.println("Inside Clear.....");
 
-            //  driver.findElement(By.xpath("//input[@type='text']")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
-
-//            el.sendKeys(Keys.chord(Keys.COMMAND,"a"));
-//            el.sendKeys(Keys.BACK_SPACE);
-//            Actions actions = new Actions(driver);
-//            actions.click(el).
-//                    keyDown(Keys.COMMAND).
-//                    sendKeys("a").
-//                    keyUp(Keys.COMMAND).
-//                    sendKeys(Keys.BACK_SPACE).build().perform();
-//
 
         } catch (Exception e) {
             APP_LOGS.error("Unable to perform clear::" + e.getMessage());
@@ -622,7 +618,7 @@ public class WebDriverUtils extends BasePage {
             driver.get(URL);
 
         } catch (Exception e) {
-            APP_LOGS.error("Unable to perform window switch::" + e.getMessage());
+            APP_LOGS.error("Unable to open URL::" + e.getMessage());
         }
 
     }

@@ -1,8 +1,8 @@
 package runner;
 
-import base.DriverSetUp;
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import base.SetUp;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
@@ -10,14 +10,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepDefinitions"},
-        plugin = {"pretty", "html:target/test-output", "json:target/cucumber-reports/cucumber.json", "junit:target/cucumber-reports/cucumber.xml"},
-        monochrome = true,
-        strict = true,
-        dryRun = false
-        //tags = {"@Smoke"}
-)
-public class TestRunner extends DriverSetUp {
+        plugin = {"pretty", "html:target/test-output/report.html", "json:target/cucumber-reports/cucumber.json", "junit:target/cucumber-reports/cucumber.xml"},
+        monochrome = true
 
+)
+public class TestRunner extends SetUp {
     @AfterClass
     public static void tearDown() {
         if (driver != null) {

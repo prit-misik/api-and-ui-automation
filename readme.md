@@ -4,6 +4,7 @@ Test automation framework that shows both API and UI automation cases
 =========================================================================
 
 
+
 1.This project demonstrates POM pattern and how it can be used 
   in Selenium to automate any application. Maven is used as test framework.
   Also, I've implemented the API automation using Rest Assured.

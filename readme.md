@@ -5,18 +5,18 @@ Test automation framework that shows both API and UI automation cases
 
 
 
-1.This project demonstrates POM pattern and how it can be used 
+1. This project demonstrates POM pattern and how it can be used 
   in Selenium to automate any application. Maven is used as test framework.
   Also, I've implemented the API automation using Rest Assured.
 
 2. For passing test data, and for separating test types UI, API  etc Cucumber is utilized.
 
-3. For reporting cucumber reports are used and reports can be found in folder "target/cucumber-reports/advanced-reports/cucumber-html-reports/feature-overview.html".
-   Also, there are different styles of report inside "target" folder
+3. For reporting cucumber reports are used and reports can be found in the folder "target/cucumber-reports/advanced-reports/cucumber-html-reports/feature- overview.html".
+Also, there are different styles of reports inside "target" folder
 
-4. For UI failed cases, screenshot can be found in folder "screenShots" folder.
+4. For UI failed cases, screenshots can be found in folder "screenShots" folder.
 
-5. Prerequisite : JDK 8 or above, and Maven 3.6 or above
+5. Prerequisite: JDK 8 or above, and Maven 3.6 or above
 
 6. To run the all the tests use the following command:
 
